@@ -8,6 +8,7 @@ function Orgs() {
 
 router.get('/', function(req, res, next) {
   Orgs().select().then(function (orgs) {
+    console.log(orgs);
     res.json(orgs);
   })
 })
