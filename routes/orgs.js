@@ -6,7 +6,7 @@ function Orgs() {
   return knex('orgs');
 }
 
-router.get('/', function(req, res, next) {
+router.get('/orgs', function(req, res, next) {
   Orgs().select().then(function (orgs) {
     console.log(orgs);
     res.json(orgs);
