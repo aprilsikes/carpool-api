@@ -1,3 +1,4 @@
+//dependencies**
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -9,6 +10,7 @@ var bodyParser = require('body-parser');
 var users = require('./routes/users');
 var orgs = require('./routes/orgs');
 
+//express**
 var app = express();
 
 // view engine setup
@@ -29,9 +31,11 @@ app.use(function(req, res, next) {
   next();
 });
 
+//routes**
+
 // app.use('/api', routes);
-app.use('/api/users', users);
-app.use('/api/orgs', orgs);
+app.use('/api', users);
+app.use('/api', orgs);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
