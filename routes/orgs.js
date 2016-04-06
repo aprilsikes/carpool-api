@@ -13,4 +13,11 @@ router.get('/', function(req, res, next) {
   })
 })
 
+router.get('/:id', function (req, res, next) {
+  Orgs().where('id', req.params.id).first().then(function (org) {
+    console.log(org);
+    res.json(org);
+  })
+})
+
 module.exports = router;
