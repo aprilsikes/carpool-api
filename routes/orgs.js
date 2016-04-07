@@ -6,6 +6,10 @@ function Orgs() {
   return knex('orgs');
 }
 
+function Groups() {
+  return knex('groups');
+}
+
 router.get('/', function(req, res, next) {
   Orgs().select().then(function (orgs) {
     console.log(orgs);
@@ -14,9 +18,12 @@ router.get('/', function(req, res, next) {
 })
 
 router.get('/:id', function (req, res, next) {
-  Orgs().where('id', req.params.id).first().then(function (org) {
-    console.log(org);
-    res.json(org);
+  Orgs().where('id',  req.params.id).first().then(function (org) {
+    Groups().where('orgs_id', req.params.id).then(function (groups) {
+      console.log(org);
+      console.log(groups);
+      res.json({singleOrg: org, groups: groups});
+    })
   })
 })
 
