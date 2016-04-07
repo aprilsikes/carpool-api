@@ -18,6 +18,7 @@ router.get('/', function(req, res, next) {
 })
 
 router.get('/:id', function (req, res, next) {
+  console.log(req.params.id);
   Orgs().where('id',  req.params.id).first().then(function (org) {
     Groups().where('orgs_id', req.params.id).then(function (groups) {
       console.log(org);
