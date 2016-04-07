@@ -18,7 +18,7 @@ exports.seed = function(knex, Promise) {
     knex('orgs').insert({
       org_name: 'New York Elementary School',
       org_url: 'http://www.usd497.org/',
-      image_url: 'https://www.usd497.org/cms/lib8/KS01906981/Centricity/Domain/5788/NY%20school%20photo.jpg',
+      image_url: 'https://upload.wikimedia.org/wikipedia/commons/b/bc/US-KS-Lawrence--2008-01-12-T-04-42-P-um-al.jpg',
       email: 'nye@nye.com',
       password: 'nye',
       category: 'School',
