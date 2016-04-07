@@ -4,7 +4,7 @@ exports.seed = function(knex, Promise) {
 
     knex('orgs').insert({
       org_name: 'Liberty Memorial Central Middle School',
-      org_url: 'https://www.usd497.org/Domain/22',
+      org_url: 'http://www.usd497.org/Domain/22',
       image_url: 'https://soe.ku.edu/sites/soe.ku.edu/files/pds/schools/central.JPG',
       email: 'lmcms@lmcms.com',
       password: 'lmcms',
