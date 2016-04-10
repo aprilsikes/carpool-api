@@ -32,28 +32,28 @@ exports.seed = function(knex, Promise) {
     }),
     knex('events').insert({
       event_name: 'Lawrence High School Chess Tournament',
-      groups_id: 3,
+      groups_id: 4,
       date: 'April 21, 2016',
       time: '9:00am',
       location: 'Lawrence High School'
     }),
     knex('events').insert({
       event_name: 'State Chess Tournament',
-      groups_id: 3,
+      groups_id: 4,
       date: 'April 22, 2016',
       time: '9:00am',
       location: 'KU Union'
     }),
     knex('events').insert({
       event_name: 'Spring Concert',
-      groups_id: 4,
+      groups_id: 3,
       date: 'April 25, 2016',
       time: '9:00am',
       location: 'Liberty Memorial Central Middle School'
     }),
     knex('events').insert({
       event_name: 'All-State Rehearsal',
-      groups_id: 4,
+      groups_id: 3,
       date: 'April 26, 2016',
       time: '3:15pm',
       location: 'Liberty Memorial Central Middle School'
@@ -88,28 +88,28 @@ exports.seed = function(knex, Promise) {
     }),
     knex('events').insert({
       event_name: 'Spring Clean-Out-the-Chicken-Coops Event',
-      groups_id: 7,
+      groups_id: 8,
       date: 'May 1, 2016',
       time: '9:00am',
       location: 'Raintree Montessori School'
     }),
     knex('events').insert({
       event_name: 'Cake Bake Sale',
-      groups_id: 7,
+      groups_id: 8,
       date: 'May 2, 2016',
       time: '2:00pm',
       location: 'Raintree Montessori School'
     }),
     knex('events').insert({
       event_name: 'Lawrence High School Chess Tournament',
-      groups_id: 8,
+      groups_id: 7,
       date: 'April 21, 2016',
       time: '9:00am',
       location: 'Lawrence High School'
     }),
     knex('events').insert({
       event_name: 'State Chess Tournament',
-      groups_id: 8,
+      groups_id: 7,
       date: 'April 22, 2016',
       time: '9:00am',
       location: 'KU Union'
