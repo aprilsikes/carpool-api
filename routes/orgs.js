@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex');
+// var authChecker = require('./authChecker');
 
 function Orgs() {
   return knex('orgs');
@@ -15,6 +16,8 @@ router.get('/', function(req, res, next) {
     res.json(orgs);
   })
 })
+
+// router.get('/:anyroute/*', authChecker.userBouncer);
 
 router.get('/:id', function (req, res, next) {
   Orgs().where('id',  req.params.id).first().then(function (org) {

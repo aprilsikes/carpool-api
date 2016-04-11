@@ -5,12 +5,14 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var bcrypt = require('bcrypt');
 
 // var routes = require('./routes/index');
 var users = require('./routes/users');
 var orgs = require('./routes/orgs');
 var groups = require('./routes/groups');
 var events = require('./routes/events');
+var authChecker = require('./routes/authChecker');
 
 //express**
 var app = express();
@@ -27,6 +29,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// var setUserNameLocal = function (req, res, next) {
+//   res.locals.currentUser = req.cookies.user
+//   next()
+// }
+
+// app.use(setUserNameLocal)
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -36,9 +45,13 @@ app.use(function(req, res, next) {
 //routes**
 
 // app.use('/api', routes);
+// app.use('/api/users', checkUser);
+app.use('/api/users', authChecker.userBouncer);
 app.use('/api/users', users);
 app.use('/api/orgs', orgs);
+app.use('/api/orgs', authChecker.userBouncer);
 app.use('/api/orgs', groups);
+app.use('/api/orgs', authChecker.userBouncer);
 app.use('/api/orgs', events);
 
 // catch 404 and forward to error handler

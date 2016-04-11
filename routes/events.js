@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex');
+var authChecker = require('./authChecker');
 
 function Orgs() {
   return knex('orgs');
@@ -14,6 +15,7 @@ function Events() {
   return knex('events');
 }
 
+router.get('/:anyroute/*', authChecker.userBouncer);
 
 router.post('/:orgs_id/groups/:id/events', function (req, res, next) {
   var event = {};
@@ -36,6 +38,8 @@ router.get('/:orgs_id/groups/:groups_id/events/:id', function (req, res, next) {
     })
   })
 })
+
+router.get('/:anyroute/*', authChecker.specific_user_checker);
 
 router.post('/:orgs_id/groups/:groups_id/events/:id/delete', function (req, res, next) {
   Events().where('id', req.params.id).delete().then(function () {
