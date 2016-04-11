@@ -6,13 +6,16 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var bcrypt = require('bcrypt');
+// var jwt = require('jsonwebtoken');
 
 // var routes = require('./routes/index');
+// var auth = require('./routes/auth');
 var users = require('./routes/users');
+var kids = require('./routes/kids');
 var orgs = require('./routes/orgs');
 var groups = require('./routes/groups');
 var events = require('./routes/events');
-var authChecker = require('./routes/authChecker');
+// var authChecker = require('./routes/authChecker');
 
 //express**
 var app = express();
@@ -46,13 +49,16 @@ app.use(function(req, res, next) {
 
 // app.use('/api', routes);
 // app.use('/api/users', checkUser);
-app.use('/api/users', authChecker.userBouncer);
+// app.use('/auth', auth);
+// app.use('/api/users', authChecker.userBouncer);
 app.use('/api/users', users);
+app.use('/api/users', kids);
 app.use('/api/orgs', orgs);
-app.use('/api/orgs', authChecker.userBouncer);
+// app.use('/api/orgs', authChecker.userBouncer);
 app.use('/api/orgs', groups);
-app.use('/api/orgs', authChecker.userBouncer);
+// app.use('/api/orgs', authChecker.userBouncer);
 app.use('/api/orgs', events);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

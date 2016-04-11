@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var knex = require('../db/knex');
 // var authChecker = require('./authChecker');
+// var jwt = require('jsonwebtoken');
 
 function Orgs() {
   return knex('orgs');
