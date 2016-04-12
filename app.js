@@ -15,6 +15,8 @@ var kids = require('./routes/kids');
 var orgs = require('./routes/orgs');
 var groups = require('./routes/groups');
 var events = require('./routes/events');
+var rides = require('./routes/rides');
+var seats = require('./routes/seats');
 // var authChecker = require('./routes/authChecker');
 
 //express**
@@ -58,6 +60,8 @@ app.use('/api/orgs', orgs);
 app.use('/api/orgs', groups);
 // app.use('/api/orgs', authChecker.userBouncer);
 app.use('/api/orgs', events);
+app.use('/api/orgs', rides);
+app.use('/api/orgs', seats);
 
 
 // catch 404 and forward to error handler

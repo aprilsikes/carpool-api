@@ -60,25 +60,25 @@ router.post('/:orgs_id/groups/:groups_id/events/:id/delete', function (req, res,
   })
 })
 
-router.post('/:orgs_id/groups/:groups_id/events/:id/rides', function (req, res, next) {
-  var ride = {};
-  ride.kid_name = req.body.kid_name,
-  event.events_id = req.params.id,
-  event.school = req.body.school,
-  Rides().insert(ride).then(function () {
-    res.json({success: true});
-  })
-})
+// router.post('/:orgs_id/groups/:groups_id/events/:id/rides', function (req, res, next) {
+//   var ride = {};
+//   ride.kid_name = req.body.kid_name,
+//   event.events_id = req.params.id,
+//   event.school = req.body.school,
+//   Rides().insert(ride).then(function () {
+//     res.json({success: true});
+//   })
+// })
 
-router.post('/:orgs_id/groups/:groups_id/events/:id/seats', function (req, res, next) {
-  var seat = {};
-  seat.username = req.body.username,
-  seat.events_id = req.params.id,
-  seat.number_of_seats = req.body.number_of_seats,
-  Seats().insert(seat).then(function () {
-    res.json({success: true});
-  })
-})
+// router.post('/:orgs_id/groups/:groups_id/events/:id/seats', function (req, res, next) {
+//   var seat = {};
+//   seat.username = req.body.username,
+//   seat.events_id = req.params.id,
+//   seat.number_of_seats = req.body.number_of_seats,
+//   Seats().insert(seat).then(function () {
+//     res.json({success: true});
+//   })
+// })
 
 // router.post('/:orgs_id/groups/:groups_id/events/:id/edit', jwt({secret: secret.secretToken}), function (req, res, next) {
 //   Events().where('id', req.params.id).update().then(function () {
