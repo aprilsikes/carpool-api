@@ -4,22 +4,6 @@ var knex = require('../db/knex');
 // var authChecker = require('./authChecker');
 // var jwt = require('jsonwebtoken');
 
-function Orgs() {
-  return knex('orgs');
-}
-
-function Groups() {
-  return knex('groups');
-}
-
-function Events() {
-  return knex('events');
-}
-
-function Rides() {
-  return knex('rides');
-}
-
 function Seats() {
   return knex('seats');
 }

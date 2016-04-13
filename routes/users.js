@@ -27,6 +27,17 @@ router.get('/:id', function (req, res, next) {
   })
 })
 
+router.post('/', function (req, res, next) {
+  var user = {};
+  user.username = req.body.username,
+  user.password = req.body.password,
+  user.email = req.body.email,
+  user.phone_number = req.body.phone_number,
+  Users().insert(user).then(function () {
+    res.json({success: true});
+  })
+})
+
 // router.get('/:anyroute/*', authChecker.userBouncer);
 
 module.exports = router;
