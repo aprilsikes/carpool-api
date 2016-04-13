@@ -47,6 +47,29 @@ app.use(function(req, res, next) {
   next();
 });
 
+// app.use(function(req, res, next){
+//   var token = req.get('Authorization');
+//   if(token){
+//     token = token.substring(7);
+//     console.log(token);
+//     jwt.verify(token, process.env.TOKEN_SECRET, function(err, decoded){
+//       if(err){
+//         // Hits this if it couldn't be verified.
+//         console.error('err', err);
+//         next();
+//       } else {
+//         console.log(decoded);
+//         req.user = decoded;
+//         next()
+//       }
+//     });
+//   } else {
+//     // No token Found
+//     console.error('no token found')
+//     next()
+//   }
+// })
+
 //routes**
 
 // app.use('/api', routes);

@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
     table.string('password');
     table.string('email');
     table.string('phone_number');
+    table.string('avatar_image_url');
     table.timestamp('created_at').defaultTo(knex.fn.now());
   })
 };

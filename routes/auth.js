@@ -9,7 +9,6 @@
 //   return knex('users');
 // }
 //
-//
 // // signIn
 // router.post('/signIn', function(req, res, next){
 //   Users().where('email', req.body.email).first().then(function(found){
@@ -44,4 +43,5 @@
 //
 // });
 //
+
 // module.exports = router;
