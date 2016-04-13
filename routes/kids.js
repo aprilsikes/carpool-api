@@ -22,4 +22,10 @@ router.post('/:id/kids', function (req, res, next) {
   })
 })
 
+router.post('/:users_id/kids/:id/update', function (req, res, next) {
+  Kids().where('id', req.params.id).update(req.body).then(function () {
+    res.json({success: true});
+  })
+})
+
 module.exports = router;

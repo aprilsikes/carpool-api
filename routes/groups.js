@@ -46,8 +46,8 @@ router.post('/:orgs_id/groups/:id/delete', function (req, res, next) {
   })
 })
 
-router.post('/:orgs_id/groups/:id/edit', function (req, res, next) {
-  Groups().where('id', req.params.id).update().then(function () {
+router.post('/:orgs_id/groups/:id/update', function (req, res, next) {
+  Groups().where('id', req.params.id).update(req.body).then(function () {
     res.json({success: true});
   })
 })

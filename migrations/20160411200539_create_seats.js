@@ -4,6 +4,7 @@ exports.up = function(knex, Promise) {
     table.string('username');
     table.integer('number_of_seats');
     table.integer('events_id');
+    table.boolean('seat_accepted');
     table.timestamp('created_at').defaultTo(knex.fn.now());
   })
 };

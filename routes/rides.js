@@ -18,4 +18,10 @@ router.post('/:orgs_id/groups/:groups_id/events/:id/rides', function (req, res, 
   })
 })
 
+router.post('/:orgs_id/groups/:groups_id/events/:events_id/rides/:id/update', function (req, res, next) {
+  Rides().where('id', req.params.id).update(req.body).then(function () {
+    res.json({success: true});
+  })
+})
+
 module.exports = router;
