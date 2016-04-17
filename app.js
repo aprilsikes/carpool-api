@@ -4,12 +4,20 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var session = require('cookie-session');
 var bodyParser = require('body-parser');
 var bcrypt = require('bcrypt');
 // var jwt = require('jsonwebtoken');
+var passport = require('passport');
+var FacebookStrategy = require('passport-facebook').Strategy;
+// var knex = require('../db/knex');
+//
+// function Users() {
+//   return knex('users');
+// }
 
 // var routes = require('./routes/index');
-// var auth = require('./routes/auth');
+var auth = require('./routes/auth');
 var users = require('./routes/users');
 var kids = require('./routes/kids');
 var orgs = require('./routes/orgs');
