@@ -1,20 +1,22 @@
 //dependencies**
 var express = require('express');
 var path = require('path');
+var qs = require('querystring');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var session = require('cookie-session');
 var bodyParser = require('body-parser');
 var bcrypt = require('bcrypt');
+
 // var jwt = require('jsonwebtoken');
-var passport = require('passport');
-var FacebookStrategy = require('passport-facebook').Strategy;
 // var knex = require('../db/knex');
 //
 // function Users() {
 //   return knex('users');
 // }
+
+var jwt = require('jsonwebtoken');
 
 // var routes = require('./routes/index');
 var auth = require('./routes/auth');
@@ -25,7 +27,6 @@ var groups = require('./routes/groups');
 var events = require('./routes/events');
 var rides = require('./routes/rides');
 var seats = require('./routes/seats');
-// var authChecker = require('./routes/authChecker');
 
 //express**
 var app = express();
@@ -81,15 +82,11 @@ app.use(function(req, res, next) {
 //routes**
 
 // app.use('/api', routes);
-// app.use('/api/users', checkUser);
-// app.use('/auth', auth);
-// app.use('/api/users', authChecker.userBouncer);
+app.use('/auth', auth);
 app.use('/api/users', users);
 app.use('/api/users', kids);
 app.use('/api/orgs', orgs);
-// app.use('/api/orgs', authChecker.userBouncer);
 app.use('/api/orgs', groups);
-// app.use('/api/orgs', authChecker.userBouncer);
 app.use('/api/orgs', events);
 app.use('/api/orgs', rides);
 app.use('/api/orgs', seats);
