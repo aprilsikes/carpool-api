@@ -15,8 +15,11 @@
     "jade": "~1.11.0",
     "jsonwebtoken": "^5.7.0",
     "knex": "^0.10.0",
+    "moment": "^2.13.0",
     "morgan": "~1.6.1",
     "pg": "^4.5.2",
+    "request": "^2.72.0",
+    "satellizer": "^0.14.0",
     "serve-favicon": "~2.3.0"
   }
 }
